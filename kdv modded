@@ -2298,5 +2298,6 @@ end
 if sprinting then
      sprinting=false
 end
+--wait(1)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("1")
 end)
---
