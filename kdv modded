@@ -1,3 +1,394 @@
+DANCEINFO.MouseButton1Click:Connect(function()
+notify("Check Console!")
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+if CHECKF9 then return end
+CHECKF9=true 
+DANCEINFO.Text="Check Console"
+print("------------------------------------------")
+print("Q - RAT DANCE, PAGE 2 - XO, PAGE 3 - C14, PAGE 4 - UNLOCKIT, PAGE 5 - RESULTS")
+print("------------------------------------------")
+print("E - BOOGIE, PAGE 2 - SODA POP, PAGE 3 - Slickback, PAGE 4 - SMOOTHMOVES, PAGE 5 - STATIC 2")
+print("------------------------------------------")
+print("R - ASSUMPTIONS, PAGE 2 - LOVE FOR YOU, PAGE 3 - DOODLE, PAGE 4 - LAGTRAIN, PAGE 5 - SILLY BILLY 2 ")
+print("------------------------------------------")
+print("T - EGYPT, PAGE 2 - ASSUMPTIONS SHUFFLE, PAGE 3 - GOAT, PAGE 4 - SUKI, PAGE 5 - SQUIDWARD YELL 2")
+print("------------------------------------------")
+print("Y - DO THR FLOP, PAGE 2 - PEASHOOTER, PAGE 3 - BUMBLEBEE, PAGE 4  CAFETERIA, PAGE 5 - YELL 3")
+print("------------------------------------------")
+print("U - CARAMELLDANSEN, PAGE 2 - BLOODPOP, PAGE 3 - STOCK SHUFFLE, PAGE 4 - DARE")
+print("------------------------------------------")
+print("P - BOMB MONKEY, PAGE 2 - INTERNET YAMERO, PAGE 3 - RAT DANCE 2, PAGE 4 - TENNA ")
+print("------------------------------------------")
+print("F - HEEL TOE HOP, PAGE 2 - CHRONOSHIFT, PAGE 3 - SHUBA DUCK, PAGE 4 - INSANITY")
+print("------------------------------------------")
+print("G - GANGNAM, PAGE 2 - IT BURNS, PAGE 3 - LEMON MELON COOKIE, PAGE 4 - TENNA 2")
+print("------------------------------------------")
+print("H - DOMINO, PAGE 2 - DISTRACTION DANCE, PAGE 3 - BIRDBRAIN, PAGE 4 - RAMBUNCTIOUS")
+print("------------------------------------------")
+print("J - STARLIT, PAGE 2 - KEEP UP, PAGE 3 - FEIN, PAGE 4 - SIDE SHUFFLE")
+print("------------------------------------------")
+print("K - WALK, PAGE 2 - BOOMBOX, PAGE 3 - POPIPO, PAGE 4 - ELECTRO SWING")
+print("------------------------------------------")
+print("L - GRIDDY, PAGE 2 - FIREWORK, PAGE 3 - PICKUP THE PHONE, PAGE 4 STEP")
+print("------------------------------------------")
+print("Z - LUX, PAGE 2 - TWO, PAGE 3 - SILLY BILLY, PAGE 4 - APPLE PEN")
+print("------------------------------------------")
+print("X - KAZOTSKY KICK, PAGE 2 - HEAVY LOVE, PAGE 3 - ROTTEN, PAGE 4 - CRANK THAT")
+print("------------------------------------------")
+print("C - MESMERIZER, PAGE 2 - MILLION, PAGE 3 - SPOOKY MONTH, PAGE 4 - TAKEDOWN")
+print("------------------------------------------")
+print("V - LIAR DANCER, PAGE 2 - BILLIE JEAN, PAGE 3 - LIMITED FLEXWORKS, PAGE 4 - GOING DOWN")
+print("------------------------------------------")
+print("B - HAKARI, PAGE 2 - SAVOR THE W, PAGE 3 - UNLIMITED FLEXWORKS, PAGE 4 - SPAMTON")
+print("------------------------------------------")
+print("N - BOX SWING, PAGE 2 - LAY, PAGE 3 - CRISSCROSS, PAGE 4 - KEMUSAN")
+print("------------------------------------------")
+print("M - CHANGE PAGES")
+print("------------------------------------------")
+print("MINUS OR '-' - COMMERCIAL BREAK, PAGE 2 - CLUB PENGUIN, PAGE 3 - TORT, PAGE 4 -  IGAKU")
+print("------------------------------------------")
+print("COMMA OR ',' - STATIC, PAGE 2 - INTERNET YAMERO, PAGE 3 - BRAIN, PAGE 4 - IM OK")
+print("------------------------------------------")
+print("LEFTBRACKET OR '[' - EMOTIONAL PRISM, PAGE 2 - I WANNA RUNAWAY, PAGE 3 - ESPRESSO, PAGE 4 - HEADLOCK 2")
+print("------------------------------------------")
+print("RIGHTBRACKET OR ']' - HEADLOCK, PAGE 2 - MIO HONDA, PAGE 3 - RAKUTEN, PAGE 4 - LINGA GULI GULI")
+print("------------------------------------------")
+print("LEFTCONTROL OR 'LCTRL' - TOGGLE SPRINT")
+print("------------------------------------------")
+print("EQUALS OR '=' TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
+wait(1)
+DANCEINFO.Text="Click me!"
+CHECKF9=false
+end)
+
+local delfile = delfile or function(path)
+    if isfile and isfile(path) then
+        pcall(function()
+            if syn and syn.io then
+                syn.io.remove(path)
+            else
+                writefile(path, "")
+            end
+        end)
+    end
+end
+local REANIMATION=false
+REANIMATE.MouseButton1Click:Connect(function()
+if REANIMATION then return end
+if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
+return notify("ALREADY REANIMATED CUH") end
+REANIMATION=true
+Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
+wait(2.15)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+wait(6.25)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
+wait(2.15)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
+wait(6.25)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
+
+REANIMATION=false
+wait(1)
+Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
+end)
+
+
+
+
+local full = game:GetObjects("rbxassetid://107495486817639")[1]:Clone()
+full.Parent = game:GetService("Workspace")
+local fallback = game:GetObjects("rbxassetid://117971041844492")[1]:FindFirstChildOfClass("KeyframeSequence")
+fallback.Parent = full
+
+local is = newproxy(true)
+local function loadlocalasset(id)
+    local id = tostring(id)
+    local id = id:gsub("^rbxassetid://", "")
+    local _, asset = pcall(function() return full[id] end)
+    if not _ or not asset then
+        asset = fallback
+    end
+
+    return asset:Clone()
+end
+getmetatable(is).__namecall = function(_, id)
+	return loadlocalasset(id)
+end
+
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP, LIKE IT DOEST LOAD THE DANCE 
+-- VVVVVVVV
+local function AddDance(Name, ScriptUrl)
+    local filePath = "KRYSTALDANCE/"..Name
+    if isfile(filePath) then
+        local success, danceData = pcall(function()
+            return loadstring(readfile(filePath))()
+        end)
+        
+        if success and danceData then
+            if danceData:IsA("KeyframeSequence") then
+                local newDance = danceData:Clone()
+                newDance.Name = Name
+                newDance.Parent = full
+                notify("Loaded from storage: "..Name)
+                return newDance
+            else
+                notify("Saved dance doesn't return KeyframeSequence: "..Name)
+            end
+        else
+            notify("Failed to load saved dance: "..Name.." - "..tostring(danceData))
+        end
+    end
+    notify("Downloading dance: "..Name)
+    local success, danceData = pcall(function()
+        return loadstring(game:HttpGet(ScriptUrl))()
+    end)
+    
+    if success and danceData then
+        if danceData:IsA("KeyframeSequence") then
+            local newDance = danceData:Clone()
+            newDance.Name = Name
+            newDance.Parent = full
+            notify("Loaded: "..Name)
+            writefile(filePath, game:HttpGet(ScriptUrl))
+            return newDance
+        else
+            notify("Dance doesn't return KeyframeSequence: "..Name)
+            return nil
+        end
+    else
+        notify("Failed to load dance: "..Name.." - "..tostring(danceData))
+        return nil
+    end
+end
+
+local danceCache = {}
+local function LoadDance(danceName, scriptUrl)
+    if danceCache[danceName] then
+        return danceCache[danceName]
+    end
+    
+    local dance = AddDance(danceName, scriptUrl)
+    if dance then
+        danceCache[danceName] = dance
+    end
+    return dance
+end
+
+
+local timeposcur = 0 
+local sound69 = Instance.new("Sound",game:GetService("RunService"))
+sound69.Looped = true
+sound69.Name = "danc"
+sound69.Playing = true
+sound69.Volume = .75
+local exploit = "shitsploit"
+        pcall(function()
+            exploit = getexecutorname()
+        end)
+	local customasset = function(id)
+        if exploit ~= "CaetSploit" then
+        idwithoutthatbit= string.gsub(id,"KDV3/","")
+        if not isfile(id) then 
+         writefile(id,game:HttpGet("https://github.com/Solary-3/Scripts/tree/Audios-1"..idwithoutthatbit))
+        end
+       repeat task.wait() until isfile(id)
+    end
+        local s = Instance.new("Sound")
+        s.Parent =game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        s.SoundId = getcustomasset(id)
+        task.spawn(function()
+            task.wait(1)
+            s:Destroy()
+        end)
+        return s.SoundId
+	end
+
+local validAudioFiles = {
+    "Sphere.mp3",
+    "rat.mp3",
+    "FunkedUp.mp3",
+    "Assumptions.mp3",
+    "Egypt.mp3",
+    "DO THE FLOP.mp3",
+    "caramell.mp3",
+    "Heel.mp3",
+    "gangnamm.mp3",
+    "Monkey.mp3",
+    "dancingin.mp3",
+    "dr.wav",
+    "griddy.mp3",
+    "lux.ogg",
+    "kazot.mp3",
+    "Domino.mp3",
+    "Liar.mp3",
+    "Mesmerizer.mp3",
+    "Box.mp3",
+    "Static.mp3",
+    "Prism.mp3",
+    "Headlock.mp3",
+    "TUCA DONKA.mp3",
+    "Break.mp3",
+    "XO.mp3",
+    "Soda.mp3",
+    "LoveForU.mp3",
+    "assum.mp3",
+    "balls.mp3",
+    "Distraction.mp3",
+    "ItBurns.mp3",
+    "chronoshift.mp3",
+    "KeepUp.mp3",
+    "Boombox.mp3",
+    "bloodpop.mp3",
+    "leftright.mp3",
+    "heavylove.mp3",
+    "Million.mp3",
+    "Bjean.mp3",
+    "Savor.mp3",
+    "Yamero.mp3",
+    "InternetAngel.mp3",
+    "CLUB PENGUIN DANCE.mp3",
+    "Runaway.mp3",
+    "MioHonda.mp3",
+    "Firework.mp3",
+    "C14.mp3",
+    "Slickback.mp3",
+    "Doodle.mp3",
+    "Goat.mp3",
+    "Bumblebee.mp3",
+    "Stock.mp3",
+    "Shuba Duck.mp3",
+    "Lemon.mp3",
+    "Birdbrain.mp3",
+    "Fein.mp3",
+    "Popipo.mp3",
+    "Pickup.mp3",
+    "Billy.mp3",
+    "rotten.mp3",
+    "Spooky.mp3",
+    "JK.mp3",
+    "Flexworks.mp3",
+    "Unlockit.mp3",
+    "Insanity.mp3",
+    "Cafeteria.mp3",
+    "Tenna.mp3",
+    "Suki.mp3",
+    "CrissCross.mp3",
+    "Dare.mp3",
+    "Lagtrain.mp3",
+    "SmoothMoves.mp3",
+    "brain.mp3",
+    "espresso.mp3",
+    "rakuten.mp3",
+    "tort.mp3",
+    "TakeDown.mp3",
+    "Side Shuffle.mp3",
+    "Rambunctious.mp3",
+    "Electro Swing.mp3",
+    "Crank.mp3",
+    "Apple Pen.mp3",
+    "Igaku.mp3",
+    "Down.mp3",
+    "Kemusan.mp3",
+    "Guli.mp3",
+    "ImOk.mp3",
+    "Spamton.mp3",
+     "Sit.mp3",
+    "Results.mp3",
+    "Yell.mp3",
+    "Yell1.mp3"
+}
+
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
+local function DanceAsset(file)
+    if not table.find(validAudioFiles, file) then
+        notify("Audio file not found: " .. file)
+        return ""
+    end
+    local filePath = "KDV3/"..file
+    if isfile(filePath) then
+        local fileSize = 0
+        pcall(function()
+            fileSize = #readfile(filePath)
+        end)
+        if fileSize < 204800 then
+            notify("Redownloading corrupted audio: " .. file)
+            delfile(filePath)
+        end
+    end
+
+    if not isfile(filePath) then 
+        notify("Downloading Audio: " .. file)
+        local success, errorMsg = pcall(function()
+            writefile(filePath, game:HttpGet("https://github.com/Solary-3/Scripts/blob/Audios-1/"..file.."?raw=true"))
+        end)
+        
+        if not success then
+            notify("Failed to download audio: " .. file .. " - " .. errorMsg)
+            writefile(filePath, "")
+            return ""
+        end
+        notify("Downloaded Audio: " .. file)
+    end
+    if isfile(filePath) then
+        local fileSize = 0
+        pcall(function()
+            fileSize = #readfile(filePath)
+        end)
+        if fileSize > 204800 then
+            return customasset(filePath)  
+        else
+            notify("Audio file is empty/corrupted: " .. file)
+            return ""
+        end
+    else
+        notify("File Not Found: " .. file)
+        return ""
+    end
+end
+
+local function Info(DanceInfo,KeyInfo)
+     Dance.Text=DanceInfo
+     Key.Text=KeyInfo
+end
+
+local function Forcestop()
+     sound69:Stop()
+end
+local char=game:GetService("Players").LocalPlayer.Character
+local Character =char
+local Humanoid = Character:WaitForChild("Humanoid")
+local mode = 1 
+local INPUTLOOP =nil
+local STATES =nil
+local SITTING=nil
+local UPDATE=nil
+local sprinting = false 
+local uis = game:GetService("UserInputService")
+
+
+local RUNNING = false
+Run1.MouseButton1Click:Connect(function()
+if REANIMATION then return notify("Reanimating please wait") end
+if RUNNING then return notify("SCRIPT IS RUNNING!!") end
+if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
+return notify("REANIMATE FIRST CUH") end
+Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
+local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween = game:GetService("TweenService"):Create(CurrentFrame, tweenInfo, {Position = UDim2.new(0.385, 0, .75, 0)})
+tween:Play()
+RUNNING = true
+
+
+
+
+
+
+
+
+
+
 -- Krystal Dance V3, Made by Hemi (es muy janky)
 local lol = math.random(1,30)
 if lol == 2 then 
@@ -2299,5 +2690,5 @@ if sprinting then
      sprinting=false
 end
 --wait(1)
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("1")
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
 end)
