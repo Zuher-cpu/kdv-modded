@@ -24,15 +24,11 @@ notify("Modded By Theo")
 wait(.95)
 notify("Credits goes to them!!!!")
 wait(1)
-notify('pls click "click me" first ty!!')
+notify('pls click "click me" first for updates!!!')
 wait(.75)
 notify('or reanimate directly', 10)
 wait(2)
 notify("Also get a keyboard script")
-wait(2)
-notify("INPORTANT: If they dont see your anims, ask them to rejoin!")
-wait(2)
-notify("If they still dont see it, then the game isnt supported")
 
 
 
@@ -53,7 +49,6 @@ corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
-corner4=Instance.new("UICorner",Enable)
 local CurrentFrame=Instance.new("Frame",ScreenGui)
 local Stroke=Instance.new("UIStroke",CurrentFrame)
 local Corner=Instance.new("UICorner",CurrentFrame)
@@ -66,7 +61,6 @@ local Key=Instance.new("TextLabel",CurrentFrame)
 local DanceInfo=Instance.new("TextLabel",CurrentFrame)
 local Dance=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
-
 
 ui.Name = "ui"
 ui.Active = true
@@ -237,6 +231,7 @@ Credits.TextSize=11
 Credits.Size=UDim2.new(0.4, 0, 0.37037, 0)
 Credits.Position=UDim2.new(0, 125, 0.55556, 0);
 Credits.Name=[[Credits]]
+
 local originalUIPosition = ui.Position
 local isTweening = false
 Show.MouseButton1Click:Connect(function()
@@ -271,6 +266,11 @@ end)
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
+
+
+
+
+
 local CHECKF9=false
 DANCEINFO.MouseButton1Click:Connect(function()
 notify("Check Console!")
@@ -349,50 +349,27 @@ local delfile = delfile or function(path)
     end
 end
 local REANIMATION=false
-local char=game:GetService("Players").LocalPlayer.Character
-local Character =char
 REANIMATE.MouseButton1Click:Connect(function()
-if REANIMATION then return end
-if game:GetService("Players").LocalPlayer.Character.Name == Character.Name.."_Fake" then
+if REANIMATION then return notify([[ALREADY REANIMATING]]) end
+if game:GetService("Players").LocalPlayer.Character.Name == "Reanimated" then
 return notify("ALREADY REANIMATED CUH") end
 REANIMATION=true
---// BY MrY7zz
-if not game.IsLoaded then
-	game.Loaded:Wait()
-end
-
---// Check configdoc.md for settings documentation (CHECK THE DESCRIPTION OF THIS POST)
-
---// Below are the settings
--- SETTINGS --
-local settings = _G
-
-settings["Use default animations"] = true
-settings["Fake character transparency level"] = 1
-settings["Disable character scripts"] = false
-settings["Fake character should collide"] = false
-settings["Parent real character to fake character"] = false
-settings["Respawn character"] = true
-settings["Instant respawn"] = false
-settings["Hide HumanoidRootPart"] = false
-settings["PermaDeath fake character"] = false
-settings["R15 Reanimate"] = false
-settings["Click Fling"] = false
-settings["Hide RootPart Distance"] = CFrame.new(255, 255, 0)
-
-settings["Names to exclude from transparency"] = {
-    --[[ example:
-    ["HumanoidRootPart"] = true,
-    ["Left Arm"] = true
-    ]]
-}
---// Settings end
-
+Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zuher-cpu/Golden-Rig/refs/heads/main/Gold"))()
+wait(6.25)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("1")
+wait(1)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zuher-cpu/Golden-Rig/refs/heads/main/Gold"))()
+wait(6.25)
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("1")
 REANIMATION=false
 wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end)
+
+
+
+
 
 
 
@@ -417,7 +394,7 @@ getmetatable(is).__namecall = function(_, id)
 	return loadlocalasset(id)
 end
 
---THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP, LIKE IT DOEST LOAD THE DANCE 
 -- VVVVVVVV
 local function AddDance(Name, ScriptUrl)
     local filePath = "KRYSTALDANCE/"..Name
@@ -462,7 +439,6 @@ local function AddDance(Name, ScriptUrl)
         return nil
     end
 end
-
 
 local danceCache = {}
 local function LoadDance(danceName, scriptUrl)
@@ -510,9 +486,6 @@ local exploit = "shitsploit"
         end)
         return s.SoundId
 	end
-
-
-
 
 local validAudioFiles = {
     "Sphere.mp3",
@@ -669,6 +642,8 @@ end
 local function Forcestop()
      sound69:Stop()
 end
+local char=game:GetService("Players").LocalPlayer.Character
+local Character =char
 local Humanoid = Character:WaitForChild("Humanoid")
 local mode = 1 
 local INPUTLOOP =nil
@@ -683,7 +658,7 @@ local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
-if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
+if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 return notify("REANIMATE FIRST CUH") end
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -2948,6 +2923,11 @@ end)
 
 
 
+
+
+
+
+
 STATES=char.Humanoid:GetPropertyChangedSignal("MoveDirection"):Connect(function()
 	if char.Humanoid.Sit == false then 
 		if char.Humanoid.MoveDirection == Vector3.new(0,0,0) and dancing == false and idle == false then
@@ -3001,6 +2981,7 @@ SITTING=char.Humanoid:GetPropertyChangedSignal("Sit"):Connect(function()
 		char.Humanoid:Move(Vector3.new(0,0,-1),true)
 	end
 end)
+
 local RunService = game:GetService("RunService")
 local Player = game:GetService("Players").LocalPlayer
 local PlayerMouse = Player:GetMouse()
@@ -3112,6 +3093,7 @@ end)
 
 end)
 
+
 Stop1.MouseButton1Click:Connect(function()
 if RUNNING then
 RUNNING=false
@@ -3142,4 +3124,3 @@ end
 --wait(1)
 game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-rs")
 end)
-
